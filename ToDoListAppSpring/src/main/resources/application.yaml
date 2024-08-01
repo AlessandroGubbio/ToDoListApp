@@ -1,0 +1,36 @@
+server:
+  port: 8080
+spring:
+  debug: true
+  application:
+    name: Tasks
+  thymeleaf:
+    cache: false
+    mode: HTML
+    encoding: UTF-8
+  resources:
+    cache:
+      period: 0
+  devtools:
+    restart:
+      enable: true
+  datasource:
+    name: ToDo List
+    url: jdbc:postgresql://localhost:5432/WebStore
+    username:
+    password:
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 2
+  jpa:
+    properties:
+      hibernate-dialect: org.hibernate.dialect.PostgreSQLDialect
+      hibernate:
+        format_sql: true
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  mvc:
+    view:
+      prefix: /templates/
+      suffix: .html
